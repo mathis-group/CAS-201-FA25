@@ -5,7 +5,7 @@ def logistic (r, xt):
     return xt_plus
 
 def run_logistic(r, x0, time_steps):
-    xs = [x0]
+    xs = np.array([x0])
     for i in range(time_steps + 1):
         xt_plus = logistic(r,x0)
         xs.append(xt_plus)
