@@ -31,6 +31,18 @@ def run_logistic_np(r, x0, time_steps):
 
     return xs # the value of x from x0 to x_time_steps
 
+def run_logistic_arrays(r, x0, time_steps):
+
+    # Intialize xs as an array
+    xs = np.zeros((len(x0),time_steps+1))
+    xs[:,0] = x0
+
+    for t in range(1,time_steps+1):
+        # Get the next time step
+        xs[:,t] = logistic(r,xs[:,t-1])
+
+    return xs # the value of x from x0 to x_time_steps
+
 if __name__ == "__main__":
     r = 1.8
     x0 = 0.1
